@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Esercizio interattivo A2-B1 sulla moda italiana.">
+  <title>La moda italiana | Haohao Italiano</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <p class="eyebrow">A2–B1 · Lettura e vocabolario</p>
+      <h1>La moda italiana</h1>
+      <p class="subtitle">Leggi, scopri e verifica la tua comprensione.</p>
+    </header>
+
+    <nav class="progress" aria-label="Progresso dell'esercizio">
+      <ol>
+        <li class="progress-step is-active" data-progress="1" aria-current="step"><span>1</span><small>Parole</small></li>
+        <li class="progress-step" data-progress="2"><span>2</span><small>Lettura</small></li>
+        <li class="progress-step" data-progress="3"><span>3</span><small>Comprensione</small></li>
+      </ol>
+    </nav>
+
+    <section class="card parte is-active" id="parte-1" data-parte="1" aria-labelledby="parte-1-title">
+      <p class="step-label">Parte 1 di 3</p>
+      <h2 id="parte-1-title">Cerca sul dizionario</h2>
+      <p><em>Cerca sul dizionario il significato delle seguenti parole. Copiale sul tuo quaderno e scrivi accanto la traduzione in cinese.</em></p>
+      <p class="translation">请查字典，把以下单词抄写到本子上，并在旁边写出中文意思。</p>
+
+      <ol class="word-list">
+        <li>fenomeno</li>
+        <li>culturale</li>
+        <li>sociale</li>
+        <li>gastronomia</li>
+        <li>marchio</li>
+        <li>aumento</li>
+        <li>acquisto</li>
+        <li>patrimonio culturale</li>
+        <li>suggestivo</li>
+        <li>artigianale</li>
+      </ol>
+
+      <label class="confirmation">
+        <input type="checkbox" id="words-confirmed">
+        <span>Ho cercato le parole e le ho scritte sul quaderno.</span>
+      </label>
+      <div class="actions actions-end">
+        <button class="button button-primary" id="to-parte-2" type="button" disabled>Continua</button>
+      </div>
+    </section>
+
+    <section class="card parte" id="parte-2" data-parte="2" aria-labelledby="parte-2-title" hidden>
+      <p class="step-label">Parte 2 di 3</p>
+      <h2 id="parte-2-title">Leggi e ascolta</h2>
+      <p class="instruction">Ascolta l’audio e leggi con calma il testo.</p>
+
+      <section class="audio-card" aria-labelledby="audio-title">
+        <div>
+          <p class="audio-label" id="audio-title">Ascolta il testo</p>
+          <p class="audio-help">播放录音，同时阅读文章。</p>
+        </div>
+        <audio controls preload="metadata">
+          <source src="assets/la-moda-italiana.m4a" type="audio/mp4">
+          Il tuo browser non supporta la riproduzione audio.
+        </audio>
+      </section>
+
+      <article class="reading" aria-labelledby="reading-title">
+        <h3 id="reading-title">La moda italiana</h3>
+        <p>La moda italiana è un fenomeno culturale e sociale. È uno dei simboli dello stile e dell’eleganza del Paese. Insieme all’arte, alla gastronomia e alla musica, attira molti turisti da tutto il mondo.</p>
+        <p>I marchi italiani producono abiti, scarpe, borse, accessori e profumi. Nel corso degli anni, le vendite sono aumentate e il Made in Italy è diventato sempre più famoso. Per molti turisti è difficile resistere al richiamo della moda italiana.</p>
+        <p>In Italia, lo shopping è reso ancora più piacevole dalle città in cui si fanno gli acquisti. Molti negozi si trovano in luoghi suggestivi, vicino a monumenti, antichi borghi e siti del patrimonio culturale.</p>
+        <p>Milano è una delle capitali internazionali della moda. Durante la settimana della moda, i nuovi vestiti vengono presentati sulle passerelle. Anche Roma è conosciuta per i suoi negozi eleganti.</p>
+        <p>Firenze non è da meno: è una città importante per la moda e per l’artigianato. Anche a Venezia, Napoli e Genova si trovano botteghe artigiane legate a una lunga tradizione.</p>
+        <p>Infine, chi cerca prodotti di marchi famosi a prezzi competitivi può andare negli outlet, dove spesso ci sono sconti interessanti.</p>
+      </article>
+
+      <div class="actions actions-between">
+        <button class="button button-secondary" data-go="1" type="button">Indietro</button>
+        <button class="button button-primary" id="to-parte-3" type="button">Continua</button>
+      </div>
+    </section>
+
+    <section class="card parte" id="parte-3" data-parte="3" aria-labelledby="parte-3-title" hidden>
+      <p class="step-label">Parte 3 di 3</p>
+      <h2 id="parte-3-title">Vero o Falso?</h2>
+      <p class="instruction">Leggi le frasi e scegli Vero oppure Falso.</p>
+      <p class="translation">判断正误，并在文章中找出支持答案的信息。</p>
+
+      <form id="quiz-form" novalidate>
+        <div id="questions"></div>
+        <p class="form-message" id="form-message" role="alert" hidden></p>
+        <div class="actions actions-between quiz-actions">
+          <button class="button button-secondary" data-go="2" type="button">Torna al testo</button>
+          <button class="button button-primary" type="submit">Controlla</button>
+        </div>
+      </form>
+
+      <section class="result" id="result" aria-live="polite" tabindex="-1" hidden>
+        <p class="result-kicker">Risultato</p>
+        <h3 id="score-heading"></h3>
+        <p id="score-message"></p>
+        <div id="review"></div>
+        <p class="read-aloud">🔊 Leggi le frasi corrette ad alta voce almeno 5 volte.<br><span>请把正确的句子大声朗读至少 5 遍。</span></p>
+        <button class="button button-primary" id="restart" type="button">Ricomincia</button>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
