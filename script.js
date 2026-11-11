@@ -33,7 +33,7 @@ const quiz = [
     statement: "Milano è importante per la moda, ma Firenze non lo è.",
     answer: "falso",
     explanation: "米兰和佛罗伦萨都与时尚密切相关；文章明确说佛罗伦萨也是重要的时尚城市。",
-    evidence: "Firenze non è da meno: è una città importante per la moda e per l’artigianato."
+    evidence: "Firenze non è da meno: è una città importante per la moda e per il lavoro artigiano."
   },
   {
     statement: "In alcune città italiane ci sono botteghe artigiane tradizionali.",
